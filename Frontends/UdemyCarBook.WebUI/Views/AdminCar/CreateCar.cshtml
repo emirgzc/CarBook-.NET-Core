@@ -1,0 +1,72 @@
+﻿@model CreateCarDto
+@{
+	ViewData["Title"] = "CreateCar";
+	Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row">
+	<div class="col-xl-12">
+		<div class="card">
+			<div class="card-body">
+
+				<h4 class="card-title">Yeni Araç Ekleme</h4>
+				<p class="card-subtitle mb-4">Araç ile ilgili temel bilgileri eksiksiz doldurmanız önemlidir. Veri girişlerinden sonra kaydet butonuna tıklayınız.</p>
+
+				<form method="post">
+					<div class="form-group">
+						<label for="exampleInputBrand">Marka</label>
+						@* @Html.DropDownListFor(x => x.BrandID, (List<SelectListItem>)ViewBag.brandValues, new { @class = "form-control" }) *@
+						<select class="form-control" asp-for="BrandID" asp-items="@ViewBag.brandValues">
+							<option value="">Seçiniz</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Model</label>
+						<input type="text" class="form-control" asp-for="Model" id="exampleInputPassword1" placeholder="Model girişi yapınız">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Kapak Fotoğrafı</label>
+						<input type="text" class="form-control" asp-for="CoverImageUrl" id="exampleInputPassword1" placeholder="Kapak Fotoğraf girişi yapınız">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">KM</label>
+						<input type="text" class="form-control" asp-for="Km" id="exampleInputPassword1" placeholder="Km girişi yapınız">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Vites Türü</label>
+						<select class="form-control" asp-for="Transmission">
+							<option value="Manuel">Manuel</option>
+							<option value="Otomatik">Otomatik</option>
+							<option value="Yarı Otomatik">Yarı Otomatik</option>
+						</select>
+						@* <input type="text" class="form-control" asp-for="Transmission" id="exampleInputPassword1" placeholder="Vites türü girişi yapınız"> *@
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Koltuk Sayısı</label>
+						<input type="number" class="form-control" min="0" asp-for="Seat" id="exampleInputPassword1" placeholder="Koltuk sayısı girişi yapınız">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Bagaj Sayısı</label>
+						<input type="number" class="form-control" min="0" asp-for="Luggage" id="exampleInputPassword1" placeholder="Bagaj sayısı girişi yapınız">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Yakıt</label>
+						<select class="form-control" asp-for="Fuel">
+							<option value="Dizel">Dizel</option>
+							<option value="Benzin">Benzin</option>
+							<option value="Benzin+LPG">Benzin+LPG</option>
+						</select>	
+						@* <input type="text" class="form-control" asp-for="Fuel" id="exampleInputPassword1" placeholder="Yakıt girişi yapınız"> *@
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Büyük Kapak Fotoğrafı</label>
+						<input type="text" class="form-control" asp-for="BigImageUrl" id="exampleInputPassword1" placeholder="Büyük Kapak Fotoğraf girişi yapınız">
+					</div>
+					<button type="submit" class="btn btn-primary waves-effect waves-light">Aracı Kaydet</button>
+				</form>
+
+			</div> <!-- end card-body-->
+		</div>
+	</div>
+</div>
+

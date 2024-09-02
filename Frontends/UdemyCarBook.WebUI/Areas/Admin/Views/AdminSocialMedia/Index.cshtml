@@ -1,0 +1,56 @@
+﻿@model List<ResultSocialMediaDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+	int count = 0;
+}
+
+<div class="row">
+	<div class="col-xl-12">
+		<div class="card">
+			<div class="card-body">
+				<h4 class="card-title">Sosyal Medya Alanı</h4>
+				<p class="card-subtitle mb-4">
+					Sosyal Medya alanında bulunan bilgileri aşağıdan düzenleyebilirsiniz.
+				</p>
+				<div class="table-responsive">
+					<table class="table mb-0">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Başlık</th>
+								<th>Url</th>
+								<th>İkon</th>
+								<th>İkon Görünüm</th>
+								<th>Sil</th>
+								<th>Güncelle</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach (var item in Model)
+							{
+								count++;
+								<tr>
+									<th>@count</th>
+									<td>@item.Name</td>
+									<td>@item.Url</td>
+									<td><i class="@item.Icon"></i></td>
+									<td>@item.Icon</td>
+									<td><a href="/Admin/AdminSocialMedia/RemoveSocialMedia/@item.SocialMediaID" class="btn btn-outline-danger">Sil</a></td>
+									<td><a href="/Admin/AdminSocialMedia/UpdateSocialMedia/@item.SocialMediaID" class="btn btn-outline-warning">Güncelle</a></td>
+								</tr>
+							}
+						</tbody>
+					</table>
+					<a href="/Admin/AdminSocialMedia/CreateSocialMedia/" class="btn btn-outline-success">Yeni Sosyal Medya Ekle</a>
+				</div>
+
+			</div>
+			<!-- end SocialMediad-body-->
+		</div>
+		<!-- end SocialMediad -->
+
+	</div>
+
+</div>

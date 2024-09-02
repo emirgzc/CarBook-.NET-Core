@@ -1,0 +1,37 @@
+﻿@model UpdateServiceDto
+
+@{
+    ViewData["Title"] = "UpdateService";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row">
+	<div class="col-xl-12">
+		<div class="card">
+			<div class="card-body">
+
+				<h4 class="card-title">Hizmet Güncelleme</h4>
+				<p class="card-subtitle mb-4">Hizmet ile ilgili temel bilgileri eksiksiz doldurmanız önemlidir. Veri girişlerinden sonra güncelle butonuna tıklayınız.</p>
+
+				<form method="post">
+					<input type="hidden" asp-for="ServiceID" />
+					<div class="form-group">
+						<label for="exampleInputPassword1">Hizmet Başlık</label>
+						<input type="text" class="form-control" asp-for="Title" id="exampleInputPassword1" placeholder="Hizmet Başlık girişi yapınız">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Hizmet Açıklama</label>
+						<textarea class="form-control" rows="5" asp-for="Description" placeholder="Hizmet girişi yapınız"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Hizmet İkon Url</label>
+						<input type="text" class="form-control" asp-for="IconUrl" id="exampleInputPassword1" placeholder="Hizmet ikon Url girişi yapınız">
+					</div>
+					<button type="submit" class="btn btn-primary waves-effect waves-light">Hizmeti Kaydet</button>
+				</form>
+
+			</div> <!-- end card-body-->
+		</div>
+	</div>
+</div>
+

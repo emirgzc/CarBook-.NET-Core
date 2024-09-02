@@ -1,0 +1,46 @@
+﻿@model List<ResultCommentDto>
+
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/AdminLayout/Index.cshtml";
+	int count = 0;
+}
+
+
+<div class="row">
+
+	<div class="col-xl-12">
+		<div class="card">
+			<div class="card-body">
+				<h4 class="card-title">Yorum Listesi Alanı</h4>
+				<p class="card-subtitle mb-4">
+					Yorum Listesi alanında bulunan bilgileri aşağıdan düzenleyebilirsiniz.
+				</p>
+				<div class="row">
+					@foreach (var item in Model)
+					{
+						count++;
+						<div class="col-md-4">
+							<div class="card">
+								<h5 class="card-header">Yorum - @count</h5>
+								<div class="card-body">
+									<h4 class="card-title">@item.Name</h4>
+									<p class="card-text">@item.Content (@item.CreatedDate.ToShortDateString())</p>
+									<a href="#" class="btn btn-primary waves-effect waves-light">Yorumu Kaldır</a>
+								</div>
+							</div>
+						</div>
+					}
+				</div>
+			</div>
+			<!-- end Blogd-body-->
+		</div>
+		<!-- end Blogd -->
+
+	</div>
+
+</div>
+
+
+
+

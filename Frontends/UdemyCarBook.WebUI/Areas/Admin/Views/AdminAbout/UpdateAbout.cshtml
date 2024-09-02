@@ -1,0 +1,36 @@
+﻿@model UpdateAboutDto
+
+@{
+    ViewData["Title"] = "UpdateAbout";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row">
+	<div class="col-xl-12">
+		<div class="card">
+			<div class="card-body">
+
+				<h4 class="card-title">Hakkımızda Güncelleme</h4>
+				<p class="card-subtitle mb-4">Hakkımızda ile ilgili temel bilgileri eksiksiz doldurmanız önemlidir. Veri girişlerinden sonra güncelle butonuna tıklayınız.</p>
+
+				<form method="post">
+					<input type="hidden" asp-for="aboutID" />
+					<div class="form-group">
+						<label for="exampleInputPassword1">Hakkımızda Başlık</label>
+						<input type="text" class="form-control" asp-for="title" id="exampleInputPassword1" placeholder="Hakkımızda Başlık girişi yapınız">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Hakkımızda Açıklama</label>
+						<textarea class="form-control" rows="5" asp-for="description" placeholder="Hakkımızda Açıklama girişi yapınız"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Hakkımızda Resim</label>
+						<input type="text" class="form-control" asp-for="imageUrl" placeholder="Hakkımızda Resim girişi yapınız">
+					</div>
+					<button type="submit" class="btn btn-primary waves-effect waves-light">Hakkımızda Güncelle</button>
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>
